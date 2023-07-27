@@ -6,7 +6,7 @@ import Book from '@/components/Book'
 export default function Home() {
   const books = useAppSelector((state) => state.bookReducer.books)
   return (
-    <div className="grid grid-cols-3 gap-8 justify-items-center min-h-[calc(100vh-64px)] py-14 sm:w-9/12 sm:mx-auto">
+    <div className="grid sm:grid-cols-3 gap-8 justify-items-center min-h-[calc(100vh-64px)] py-14 sm:w-9/12 sm:mx-auto">
       {books.map(({ category, description, name, price }, index) => (
         <Book
           category={category}
