@@ -18,7 +18,7 @@ const Modal = () => {
       >
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 z-30">
           <div
-            className="w-full relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg "
+            className="w-full relative transform overflow-hidden rounded-lg text-left bg-base-300 shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg "
             onClick={(e) => e.stopPropagation()}
           >
             <ContentComponent />
