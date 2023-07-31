@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { toggle } from '@/store/features/modalReducer'
 import { useAppDispatch } from '@/store/hooks'
 import { addBook } from '@/store/features/bookSlice'
+import { v4 as uuidv4 } from 'uuid'
+
 const AddBookForm = () => {
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
@@ -12,7 +14,8 @@ const AddBookForm = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (name && price && category && description) {
-      dispatch(addBook({ name, price, category, description }))
+      const uniqueId = uuidv4()
+      dispatch(addBook({ name, price, category, description, id: uniqueId }))
     }
 
     setName('')

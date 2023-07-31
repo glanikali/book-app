@@ -4,7 +4,7 @@ import { Book } from '@/lib/definitions'
 import { removeBook, setBookEdit } from '@/store/features/bookSlice'
 import { useAppDispatch } from '@/store/hooks'
 import { changeContent } from '@/store/features/modalReducer'
-const BookCard = ({ category, description, name, price }: Book) => {
+const BookCard = ({ category, description, name, price, id }: Book) => {
   const dispatch = useAppDispatch()
   return (
     <div className="card w-96 bg-base-100 shadow-xl w-full">
@@ -19,7 +19,7 @@ const BookCard = ({ category, description, name, price }: Book) => {
           <button
             className="btn btn-secondary hover:btn-active"
             onClick={() => {
-              dispatch(setBookEdit({ category, description, name, price }))
+              dispatch(setBookEdit({ category, description, name, price, id }))
               dispatch(changeContent('edit'))
             }}
           >

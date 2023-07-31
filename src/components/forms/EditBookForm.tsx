@@ -18,7 +18,15 @@ const EditBookForm = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (name && price && category && description) {
-      dispatch(editBook({ name, price, category, description }))
+      dispatch(
+        editBook({
+          name,
+          price,
+          category,
+          description,
+          id: bookToEdit?.id || '',
+        })
+      )
     }
 
     setName('')

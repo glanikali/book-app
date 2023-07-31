@@ -3,4 +3,5 @@ export interface Book {
   price: string
   category: string
   description: string
+  id: string
 }
